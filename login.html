@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login — Quang Nguyen Shop</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fff;
+      color: #111;
+      font-family: 'Be Vietnam Pro', sans-serif;
+    }
+
+    /* HEADER */
+    .header {
+      padding: 30px 60px;
+    }
+
+    .brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      letter-spacing: 3px;
+    }
+
+    /* MAIN */
+    .container {
+      max-width: 400px;
+      margin: 120px auto;
+    }
+
+    h1 {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 40px;
+    }
+
+    .input-group {
+      margin-bottom: 25px;
+    }
+
+    input {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+      font-size: 14px;
+      outline: none;
+      background: transparent;
+    }
+
+    input:focus {
+      border-bottom: 1px solid #000;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 30px;
+      background: #111;
+      color: #fff;
+      border: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #333;
+    }
+
+    .links {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #555;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: #555;
+    }
+
+    .links a:hover {
+      color: #000;
+    }
+
+    .note {
+      margin-top: 30px;
+      font-size: 11px;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      .header {
+        padding: 20px;
+      }
+
+      .container {
+        margin: 80px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="brand">QUANG NGUYEN SHOP</div>
+  </div>
+
+  <!-- FORM -->
+  <div class="container">
+    <h1>LOG IN</h1>
+
+    <div class="input-group">
+      <input type="text" id="username" placeholder="USERNAME">
+    </div>
+
+    <div class="input-group">
+      <input type="password" id="password" placeholder="PASSWORD">
+    </div>
+
+    <button onclick="login()">LOG IN</button>
+
+    <div class="links">
+      <a href="#">Forgot your password?</a>
+      <a href="#">Create account</a>
+    </div>
+
+    <div class="note">
+      Demo: admin / 123
+    </div>
+  </div>
+
+  <script>
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+
+      if (user === "admin" && pass === "123") {
+        localStorage.setItem("loggedIn", "true");
+        window.location.href = "index.html";
+      } else {
+        alert("Sai tài khoản!");
+      }
+    }
+  </script>
+
+</body>
+</html>
